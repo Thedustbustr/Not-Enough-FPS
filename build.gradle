@@ -1,0 +1,60 @@
+plugins {
+    id 'net.fabricmc.fabric-loom-remap' version "${loom_version}"
+}
+
+repositories {
+    mavenCentral()
+    maven {
+        url 'https://api.modrinth.com/maven'
+    }
+    maven {
+        url 'https://gitlab.com/api/v4/projects/76146809/packages/maven'
+    }
+
+    maven {
+        url 'https://gitlab.com/api/v4/projects/76147521/packages/maven'
+    }
+}
+
+version = project.mod_version
+group = project.maven_group
+
+base {
+    archivesName = 'not-enough-fps'
+}
+
+dependencies {
+    minecraft "com.mojang:minecraft:${project.minecraft_version}"
+    mappings loom.officialMojangMappings()
+
+    modImplementation("maven.modrinth:sodium:${project.sodium_version}-fabric")
+    modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
+    modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
+
+    include implementation("net.thedustbuster.libs:core:${project.java_libs_core_version}")
+    include implementation("net.thedustbuster.libs:func:${project.java_libs_functional_version}")
+}
+
+processResources {
+    inputs.property "version", project.version
+
+    filesMatching("fabric.mod.json") {
+        expand "version": project.version
+    }
+}
+
+tasks.withType(JavaCompile).configureEach {
+    it.options.release = 21
+    options.compilerArgs << "-Xlint:deprecation"
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_21
+    targetCompatibility = JavaVersion.VERSION_21
+}
+
+jar {
+    from("LICENSE") {
+        rename { "${it}_${project.base.archivesName.get()}" }
+    }
+}

@@ -1,0 +1,9 @@
+{
+  "required": true,
+  "package": "net.thedustbuster.nef.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "client": [ "MinecraftMixin", "OptionsMixin", "ControlValueFormatterImplsMixin", "SliderControlElementMixin", "SodiumConfigBuilderMixin" ]
+}

@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "id": "not-enough-fps",
+  "version": "${version}",
+  "name": "Not Enough FPS",
+  "description": "A small mod that increases Minecraft's FPS limit limit to 1000",
+  "authors": [
+    "Thedustbuster"
+  ],
+  "contact": {
+    "sources": "https://github.com/Thedustbustr/Not-Enough-FPS"
+  },
+  "license": "LGPLv3",
+  "icon": "assets/not-enough-fps/icon.png",
+  "environment": "client",
+  "entrypoints": {
+    "main": [ ]
+  },
+  "mixins": [
+    "not-enough-fps.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.18",
+    "fabric-api": "*",
+    "sodium": "0.8",
+    "java": ">=21",
+    "minecraft": [
+      "1.21.11"
+    ]
+  }
+}
