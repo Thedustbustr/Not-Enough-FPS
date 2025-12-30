@@ -1,6 +1,7 @@
 package net.thedustbuster.nef.mixin;
 
 import com.mojang.blaze3d.platform.InputConstants;
+import net.caffeinemc.mods.sodium.api.config.option.SteppedValidator;
 import net.caffeinemc.mods.sodium.client.config.structure.IntegerOption;
 import net.caffeinemc.mods.sodium.client.gui.options.control.ControlElement;
 import net.minecraft.client.input.KeyEvent;
@@ -116,8 +117,8 @@ public abstract class SliderControlElementMixin {
   @Unique
   private void commitTypedValue() {
     int value = Integer.parseInt(textBuffer.toString());
-    var range = option.getRange();
-    value = Mth.clamp(value, range.min(), range.max());
+    SteppedValidator validator = option.getSteppedValidator();
+    value = Mth.clamp(value, validator.min(), validator.max());
     option.modifyValue(value);
   }
 }

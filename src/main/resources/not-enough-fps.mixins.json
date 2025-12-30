@@ -5,5 +5,5 @@
   "injectors": {
     "defaultRequire": 1
   },
-  "client": [ "MinecraftMixin", "OptionsMixin", "ControlValueFormatterImplsMixin", "SliderControlElementMixin", "SodiumConfigBuilderMixin" ]
+  "client": [ "ControlValueFormatterImplsMixin", "MinecraftMixin", "OptionsMixin", "SliderControlElementMixin", "SodiumConfigBuilderMixin" ]
 }
