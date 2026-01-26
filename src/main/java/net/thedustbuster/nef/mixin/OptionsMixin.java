@@ -24,7 +24,7 @@ public abstract class OptionsMixin {
       value = "INVOKE",
       target = "Lnet/minecraft/client/Options;load()V",
       shift = At.Shift.BEFORE
-    )w
+    )
   )
   private void overrideFpsLimit(CallbackInfo ci) {
     this.framerateLimit = new OptionInstance<>(
