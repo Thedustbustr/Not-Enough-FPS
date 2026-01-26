@@ -23,8 +23,7 @@
     "fabricloader": ">=0.18",
     "fabric-api": "*",
     "sodium": [
-      "0.8.1",
-      "0.8.2"
+      ">=0.8.1"
     ],
     "java": ">=21",
     "minecraft": [
