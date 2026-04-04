@@ -1,4 +1,4 @@
-package net.thedustbuster.nef.mixin;
+package net.thedustbuster.nef.mixin.client;
 
 import net.caffeinemc.mods.sodium.api.config.structure.IntegerOptionBuilder;
 import net.caffeinemc.mods.sodium.client.gui.SodiumConfigBuilder;

@@ -1,4 +1,4 @@
-package net.thedustbuster.nef.mixin;
+package net.thedustbuster.nef.mixin.client;
 
 import com.mojang.blaze3d.platform.InputConstants;
 import net.caffeinemc.mods.sodium.api.config.option.SteppedValidator;
@@ -20,13 +20,13 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(targets = "net.caffeinemc.mods.sodium.client.gui.options.control.SliderControl$SliderControlElement")
 public abstract class SliderControlElementMixin {
-  @Final @Shadow
-  private IntegerOption option;
-
   @Unique
-  public ControlElement getControlElement() {
+  public ControlElement self() {
     return (ControlElement) (Object) this;
   }
+
+  @Final @Shadow
+  private IntegerOption option;
 
   @Unique
   private boolean typing = false;
@@ -47,17 +47,17 @@ public abstract class SliderControlElementMixin {
   }
 
   @ModifyArg(
-    method = "render",
+    method = "extractRenderState",
     at = @At(
       value = "INVOKE",
-      target = "Lnet/caffeinemc/mods/sodium/client/gui/options/control/SliderControl$SliderControlElement;drawString(Lnet/minecraft/client/gui/GuiGraphics;Lnet/minecraft/network/chat/Component;III)V"
+      target = "Lnet/caffeinemc/mods/sodium/client/gui/options/control/SliderControl$SliderControlElement;drawString(Lnet/minecraft/client/gui/GuiGraphicsExtractor;Lnet/minecraft/network/chat/Component;III)V"
     ),
     index = 1
   )
   private Component overrideLabelText(Component original) {
     if (!typing) return original;
 
-    if (!getControlElement().isHovered()) {
+    if (!self().isHovered()) {
       this.typing = false;
       return original;
     }

@@ -1,4 +1,4 @@
-package net.thedustbuster.nef.mixin;
+package net.thedustbuster.nef.mixin.client;
 
 import net.caffeinemc.mods.sodium.client.gui.options.control.ControlValueFormatterImpls;
 import net.thedustbuster.nef.NotEnoughFPSSettings;
@@ -9,7 +9,7 @@ import org.spongepowered.asm.mixin.injection.ModifyConstant;
 @Mixin(ControlValueFormatterImpls.class)
 public abstract class ControlValueFormatterImplsMixin {
   @ModifyConstant(
-    method = "lambda$fpsLimit$2",
+    method = "lambda$fpsLimit$0",
     constant = @Constant(intValue = 260)
   )
   private static int overrideMaxFPS(int original) {
