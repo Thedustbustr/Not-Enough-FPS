@@ -1,4 +1,4 @@
-package net.thedustbuster.nef.mixin;
+package net.thedustbuster.nef.mixin.client;
 
 import net.minecraft.client.Minecraft;
 import net.thedustbuster.nef.NotEnoughFPSSettings;
@@ -9,7 +9,7 @@ import org.spongepowered.asm.mixin.injection.ModifyConstant;
 @Mixin(Minecraft.class)
 public abstract class MinecraftMixin {
   @ModifyConstant(
-    method = "runTick",
+    method = "renderFrame",
     constant = @Constant(intValue = 260)
   )
   private int replaceUnlimitedCutoff(int original) {

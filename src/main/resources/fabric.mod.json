@@ -20,14 +20,13 @@
     "not-enough-fps.mixins.json"
   ],
   "depends": {
-    "fabricloader": ">=0.18",
+    "fabricloader": ">=0.18.6",
     "fabric-api": "*",
-    "sodium": [
-      ">=0.8.1"
-    ],
-    "java": ">=21",
+    "sodium": ">=0.8.1",
+    "java": ">=25",
     "minecraft": [
-      "1.21.11"
+      "26.1",
+      "26.1.1"
     ]
   }
 }

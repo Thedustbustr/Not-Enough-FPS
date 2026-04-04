@@ -1,4 +1,4 @@
-package net.thedustbuster.nef.mixin;
+package net.thedustbuster.nef.mixin.client;
 
 import com.mojang.serialization.Codec;
 import net.minecraft.client.Minecraft;
