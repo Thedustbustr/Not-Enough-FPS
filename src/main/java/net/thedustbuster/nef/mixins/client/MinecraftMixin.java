@@ -1,7 +1,7 @@
-package net.thedustbuster.nef.mixin.client;
+package net.thedustbuster.nef.mixins.client;
 
 import net.minecraft.client.Minecraft;
-import net.thedustbuster.nef.NotEnoughFPSSettings;
+import net.thedustbuster.nef.client.NotEnoughFPSSettings;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.Constant;
 import org.spongepowered.asm.mixin.injection.ModifyConstant;

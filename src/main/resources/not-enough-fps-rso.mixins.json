@@ -1,0 +1,12 @@
+{
+  "required": true,
+  "package": "net.thedustbuster.nef.mixins.compat.rso",
+  "plugin": "net.thedustbuster.nef.mixins.compat.rso.RSOMixinPlugin",
+  "compatibilityLevel": "JAVA_25",
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "client": [
+    "client.IntegerSliderOptionRowMixin"
+  ]
+}
