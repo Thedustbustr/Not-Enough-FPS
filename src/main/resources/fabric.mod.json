@@ -17,12 +17,13 @@
     "main": [ ]
   },
   "mixins": [
-    "not-enough-fps.mixins.json"
+    "not-enough-fps.mixins.json",
+    "not-enough-fps-rso.mixins.json"
   ],
   "depends": {
     "fabricloader": ">=0.18.6",
     "fabric-api": ">=0.153.0",
-    "sodium": ">=0.8.9",
+    "sodium": ">=0.9.1",
     "java": ">=25",
     "minecraft": [
       "26.1",

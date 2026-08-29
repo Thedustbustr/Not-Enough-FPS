@@ -1,8 +1,8 @@
-package net.thedustbuster.nef.mixin.client;
+package net.thedustbuster.nef.mixins.client;
 
 import net.caffeinemc.mods.sodium.api.config.structure.IntegerOptionBuilder;
 import net.caffeinemc.mods.sodium.client.gui.SodiumConfigBuilder;
-import net.thedustbuster.nef.NotEnoughFPSSettings;
+import net.thedustbuster.nef.client.NotEnoughFPSSettings;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Redirect;
