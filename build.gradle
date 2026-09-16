@@ -21,7 +21,7 @@ dependencies {
     implementation("maven.modrinth:sodium:${project.sodium_version}-fabric")
     implementation "net.fabricmc:fabric-loader:${project.loader_version}"
     implementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
-    implementation("maven.modrinth:reeses-sodium-options:${project.reeses_sodium_options_version}")
+    implementation("maven.modrinth:reeses-sodium-options:${project.reeses_sodium_options_version}+fabric")
 
     include implementation("net.thedustbuster.libs:core:${project.java_libs_core_version}")
     include implementation("net.thedustbuster.libs:func:${project.java_libs_functional_version}")
