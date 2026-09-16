@@ -61,7 +61,7 @@ public final class SliderTypingController {
       return true;
     }
 
-    if (event.key() == InputConstants.KEY_RETURN) {
+    if (event.key() == InputConstants.KEY_RETURN || event.key() == InputConstants.KEY_NUMPADENTER) {
       commit(option);
       typing = false;
       return true;
@@ -72,11 +72,21 @@ public final class SliderTypingController {
       return true;
     }
 
-    if (event.getDigit() != -1 && textBuffer.length() < 4) {
-      textBuffer.append(event.getDigit());
+    int digit = digitOf(event);
+    if (digit != -1 && textBuffer.length() < 4) {
+      textBuffer.append(digit);
     }
 
     return true;
+  }
+
+  private static int digitOf(KeyEvent event) {
+    int key = event.input();
+
+    if (key == InputConstants.KEY_0 || key == InputConstants.KEY_NUMPAD0) return 0;
+    if (key >= InputConstants.KEY_1 && key <= InputConstants.KEY_9) return key - InputConstants.KEY_1 + 1;
+    if (key >= InputConstants.KEY_NUMPAD1 && key <= InputConstants.KEY_NUMPAD9) return key - InputConstants.KEY_NUMPAD1 + 1;
+    return -1;
   }
 
   private void commit(IntegerOption option) {
